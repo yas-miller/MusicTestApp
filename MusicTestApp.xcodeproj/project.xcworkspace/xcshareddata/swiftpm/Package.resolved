@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "easystash",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/onmyway133/EasyStash",
+      "state" : {
+        "revision" : "c7230d65d4c2c143ac395e870a7b2bd8cf0c139e",
+        "version" : "1.1.8"
+      }
+    }
+  ],
+  "version" : 2
+}

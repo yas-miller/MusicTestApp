@@ -11,8 +11,16 @@ import MusicCodebase
 struct ContentView: View {
     @EnvironmentObject var data: MusicCodebase.Data
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Spacer()
+            
+            HStack(alignment: .center) {
+                PlayerSmallFrame()
+            }
+            .frame(minWidth: 100, maxWidth: .infinity, minHeight: 50, maxHeight: 100)
+        }
+        
+        MusicTracksList()
     }
 }
 

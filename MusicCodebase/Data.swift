@@ -11,7 +11,7 @@ import AVFoundation
 
 public class Data: ObservableObject, Codable
 {
-    @Published var musicTracks: [MusicTrack]?
+    @Published public var musicTracks: [MusicTrack]?
     
     public init()
     {
@@ -20,15 +20,14 @@ public class Data: ObservableObject, Codable
     
     public func loadGenericData()
     {
-        var t1 = Bundle.allBundles
-        var t2 = Bundle.allFrameworks.
+        var musicCodebaseBundle = Bundle(for: type(of: self))
         
         self.musicTracks = [MusicTrack]()
         
         let performerTheWeeknd = Performer(name: "The weeknd")
-        self.musicTracks?.append(MusicTrack(name: "Can't feel my face", performer: performerTheWeeknd, filePath: Bundle.main.path(forResource: "the_weeknd-cant_feel_my_face", ofType: "mp3")!))
-        self.musicTracks?.append(MusicTrack(name: "Secrets", performer: performerTheWeeknd, filePath: Bundle.main.path(forResource: "the_weeknd-secrets", ofType: "mp3")!))
-        self.musicTracks?.append(MusicTrack(name: "Ordinary life", performer: performerTheWeeknd, filePath: Bundle.main.path(forResource: "the_weeknd-ordinary_life", ofType: "mp3")!))
+        self.musicTracks?.append(MusicTrack(name: "Can't feel my face", performer: performerTheWeeknd, filePath: musicCodebaseBundle.path(forResource: "the_weeknd-cant_feel_my_face", ofType: "mp3")!))
+        self.musicTracks?.append(MusicTrack(name: "Secrets", performer: performerTheWeeknd, filePath: musicCodebaseBundle.path(forResource: "the_weeknd-secrets", ofType: "mp3")!))
+        self.musicTracks?.append(MusicTrack(name: "Ordinary life", performer: performerTheWeeknd, filePath: musicCodebaseBundle.path(forResource: "the_weeknd-ordinary_life", ofType: "mp3")!))
     }
     
     public func loadDataLocally() throws

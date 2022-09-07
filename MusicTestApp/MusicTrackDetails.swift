@@ -10,14 +10,10 @@ import MusicCodebase
 
 struct MusicTrackDetails: View {
     @EnvironmentObject var data: MusicCodebase.Data
+    @StateObject var musicTrack: MusicCodebase.MusicTrack
+    
     var body: some View {
-        if let musicTracks = data.musicTracks
-        {
-            List(musicTracks) { musicTrack in
-                NavigationLink(musicTrack.name) {
-                    
-                }
-            }
-        }
+        Text(musicTrack.name)
+        Text(musicTrack.performer.name)
     }
 }

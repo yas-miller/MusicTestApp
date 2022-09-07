@@ -7,9 +7,16 @@
 
 import SwiftUI
 import MusicCodebase
+import AVFAudio
+import MediaPlayer
 
 @main
 struct MusicTestAppApp: App {
+    init() {
+        UIApplication.shared.beginReceivingRemoteControlEvents()
+        try! AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+    }
+    
     @StateObject var data: MusicCodebase.Data = {
         let data = MusicCodebase.Data()
         data.loadGenericData()

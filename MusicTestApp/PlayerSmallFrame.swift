@@ -11,13 +11,54 @@ import MusicCodebase
 struct PlayerSmallFrame: View {
     @EnvironmentObject var data: MusicCodebase.Data
     var body: some View {
-        Button(action: {
-            data.player.play()
-        }, label: {
-            Image(systemName: "play.circle")
-                .imageScale(.large)
-        })
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            if MusicPlayer.shared.isPlaying {
+                Button(action: {
+                    do
+                    {
+                        try MusicPlayer.shared.pause()
+                    }
+                    catch let error
+                    {
+                        
+                    }
+                }, label: {
+                    Image(systemName: "pause.circle")
+                        .imageScale(.large)
+                })
+            }
+            else {
+                Button(action: {
+                    do
+                    {
+                        try MusicPlayer.shared.play()
+                    }
+                    catch let error
+                    {
+                        
+                    }
+                }, label: {
+                    Image(systemName: "play.circle")
+                        .imageScale(.large)
+                })
+            }
+            
+            if let nowPlayingTrack = MusicPlayer.shared.musicTracksQueue.first {
+                VStack {
+                    Text(nowPlayingTrack.name)
+                        .bold()
+                    Text(nowPlayingTrack.performer.name)
+                }
+                
+            }
+            else
+            {
+                Text("Not playing")
+                    .font(.system(.title3))
+            }
+            
+            Spacer()
+        }
     }
 }
 

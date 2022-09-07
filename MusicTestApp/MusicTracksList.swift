@@ -14,8 +14,24 @@ struct MusicTracksList: View {
         if let musicTracks = data.musicTracks
         {
             List(musicTracks) { musicTrack in
-                NavigationLink(musicTrack.name) {
+                HStack {
+                    Button(action: {
+                        do
+                        {
+                            try MusicPlayer.shared.startPlayingNewMusicTrack(musicTrack: musicTrack)
+                        }
+                        catch let error
+                        {
+                            
+                        }
+                    }, label: {
+                        Image(systemName: "play.circle")
+                            .imageScale(.large)
+                    })
                     
+                    NavigationLink(musicTrack.name) {
+                        MusicTrackDetails(musicTrack: musicTrack)
+                    }
                 }
             }
         }

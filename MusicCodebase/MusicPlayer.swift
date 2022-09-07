@@ -33,7 +33,7 @@ public class MusicPlayer: NSObject, AVAudioPlayerDelegate, ObservableObject
     @Published public var duration: TimeInterval = TimeInterval()
     
     
-    private var repeatedTimer: Timer?
+    public var repeatedTimer: ResumableTimer?
     
     public func startPlayingNewMusicTrack(musicTrack: MusicTrack) throws
     {
@@ -47,8 +47,8 @@ public class MusicPlayer: NSObject, AVAudioPlayerDelegate, ObservableObject
         if let musicTrack = self.musicTracksQueue.first {
             //if musicTracksPlayer == nil
             //{
-            self.musicTracksPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: musicTrack.filePath))
-            self.setupRemoteTransportControls()
+            self.musicTracksPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: musicTrack.filePathURL))
+            self.setupRemoteTransportControlsSystemwise()
             self.musicTracksPlayer!.delegate = self
             self.play()
             //}
@@ -72,11 +72,12 @@ public class MusicPlayer: NSObject, AVAudioPlayerDelegate, ObservableObject
         self.musicTracksPlayer!.play()
         self.isPlaying = true
         
-        self.repeatedTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
+        self.repeatedTimer = ResumableTimer(interval: 1.0, isRepeatable: true) {
             self.isPlaying = true
             self.currentTime = self.musicTracksPlayer!.currentTime
             self.duration = self.musicTracksPlayer!.duration
-        })
+        }
+        self.repeatedTimer!.start()
     }
     public func pause()
     {
@@ -95,39 +96,14 @@ public class MusicPlayer: NSObject, AVAudioPlayerDelegate, ObservableObject
         try? self.startPlaying()
    }
     
-    public func getCurrentMusicTrackTitleFromMetadata() -> String? {
-        guard !self.musicTracksQueue.isEmpty else { return nil }
-        
-        let systemMP: MPMusicPlayerController & MPSystemMusicPlayerController = MPMusicPlayerController.systemMusicPlayer;
-        let currentPlayingItem: MPMediaItem? = systemMP.nowPlayingItem;
-        let title: String? = currentPlayingItem?.title
-
-        return title
-    }
-    public func getCurrentMusicTrackArtistFromMetadata() -> String? {
-        guard !self.musicTracksQueue.isEmpty else { return nil }
-        
-        let systemMP: MPMusicPlayerController & MPSystemMusicPlayerController = MPMusicPlayerController.systemMusicPlayer;
-        let currentPlayingItem: MPMediaItem? = systemMP.nowPlayingItem;
-        let artist: String? = currentPlayingItem?.artist
-        return artist
-    }
-    public func getCurrentMusicTrackArtworkImageFromMetadata() -> UIImage? {
-        guard !self.musicTracksQueue.isEmpty else { return nil }
-        
-        let systemMP: MPMusicPlayerController & MPSystemMusicPlayerController = MPMusicPlayerController.systemMusicPlayer;
-        let currentPlayingItem: MPMediaItem? = systemMP.nowPlayingItem;
-        let artworkImage: UIImage? = currentPlayingItem?.artwork?.image(at: CGSize(width: 200, height: 200));
-        
-        return artworkImage
-    }
-    
     func setupNowPlayingSystemwise() {
         // Define Now Playing Info
         var nowPlayingInfo = [String: Any]()
-        nowPlayingInfo[MPMediaItemPropertyTitle] = "My Movie"
+        nowPlayingInfo[MPMediaItemPropertyTitle] = self.musicTracksQueue.first!.getTitleFromMetadata()
+        nowPlayingInfo[MPMediaItemPropertyArtist] = self.musicTracksQueue.first!.getArtistFromMetadata()
+        nowPlayingInfo[MPMediaItemPropertyAlbumTitle] = self.musicTracksQueue.first!.getAlbumFromMetadata()
 
-        if let image = self.getCurrentMusicTrackArtworkImageFromMetadata() {
+        if let image = self.musicTracksQueue.first!.getArtworkImageFromMetadata() {
             nowPlayingInfo[MPMediaItemPropertyArtwork] =
                 MPMediaItemArtwork(boundsSize: image.size) { size in
                     return image
@@ -140,8 +116,7 @@ public class MusicPlayer: NSObject, AVAudioPlayerDelegate, ObservableObject
         // Set the metadata
         MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
     }
-    
-    private func setupRemoteTransportControls() {
+    private func setupRemoteTransportControlsSystemwise() {
         // Get the shared MPRemoteCommandCenter
         let commandCenter = MPRemoteCommandCenter.shared()
 

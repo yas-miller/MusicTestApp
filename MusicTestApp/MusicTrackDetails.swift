@@ -13,7 +13,14 @@ struct MusicTrackDetails: View {
     @StateObject var musicTrack: MusicCodebase.MusicTrack
     
     var body: some View {
-        Text(musicTrack.name)
-        Text(musicTrack.performer.name)
+        VStack {
+            CustomBackNavigationButton()
+            Spacer()
+            VStack {
+                Text(musicTrack.name)
+                Text(musicTrack.artist.name)
+            }
+            Spacer()
+        }
     }
 }

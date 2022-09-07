@@ -9,14 +9,15 @@ import SwiftUI
 import MusicCodebase
 
 struct PlayerSmallFrame: View {
-    @EnvironmentObject var data: MusicCodebase.Data
+    @ObservedObject private var musicPlayer: MusicPlayer = MusicPlayer.shared
+
     var body: some View {
         HStack {
-            if MusicPlayer.shared.isPlaying {
+            if musicPlayer.isPlaying {
                 Button(action: {
                     do
                     {
-                        try MusicPlayer.shared.pause()
+                        try musicPlayer.pause()
                     }
                     catch let error
                     {
@@ -31,7 +32,7 @@ struct PlayerSmallFrame: View {
                 Button(action: {
                     do
                     {
-                        try MusicPlayer.shared.play()
+                        try musicPlayer.play()
                     }
                     catch let error
                     {
@@ -43,11 +44,11 @@ struct PlayerSmallFrame: View {
                 })
             }
             
-            if let nowPlayingTrack = MusicPlayer.shared.musicTracksQueue.first {
+            if let nowPlayingTrack = musicPlayer.musicTracksQueue.first {
                 VStack {
                     Text(nowPlayingTrack.name)
                         .bold()
-                    Text(nowPlayingTrack.performer.name)
+                    Text(nowPlayingTrack.artist.name)
                 }
                 
             }
@@ -59,6 +60,7 @@ struct PlayerSmallFrame: View {
             
             Spacer()
         }
+        .padding(Edge.Set.horizontal)
     }
 }
 

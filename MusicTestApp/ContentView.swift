@@ -7,34 +7,34 @@
 
 import SwiftUI
 import MusicCodebase
+import NavigationStack
 
 struct ContentView: View {
     @EnvironmentObject var data: MusicCodebase.Data
     @State private var isPlayerFullScreenViewPresented: Bool = false
     
     var body: some View {
-        NavigationView {
-            ZStack(alignment: .bottom) {
+        ZStack(alignment: .bottom) {
+            NavigationStackView {
                 MusicTracksList()
+                    .navigationTitle("MusicTestApp")
+                    .fullScreenCover(isPresented: $isPlayerFullScreenViewPresented) {
+                        PlayerFullScreen(isViewPresented: $isPlayerFullScreenViewPresented)
+                    }
+            }
 
-                HStack {
-                    PlayerSmallFrame()
-                        .foregroundColor(.black)
-                        .padding(Edge.Set.horizontal, nil)
-                        .frame(minWidth: 100, maxWidth: .infinity, minHeight: 30, maxHeight: 50)
-                }
-                //.background(.background)
-                .border(Color.gray)
+            VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterial))
+                .frame(minWidth: 100, maxWidth: .infinity, minHeight: 30, maxHeight: 70)
                 .edgesIgnoringSafeArea(.bottom)
+
+            
+            PlayerSmallFrame()
+                .foregroundColor(.black)
+                .frame(minWidth: 100, maxWidth: .infinity, minHeight: 30, maxHeight: 70)
                 .animation(Animation.interactiveSpring())
                 .onTapGesture {
                     self.isPlayerFullScreenViewPresented.toggle()
                 }
-            }
-            .fullScreenCover(isPresented: $isPlayerFullScreenViewPresented) {
-                PlayerFullScreen(isPlayerFullScreenViewPresented: $isPlayerFullScreenViewPresented)
-            }
-            .navigationTitle("MusicTestApp")
         }
     }
 }

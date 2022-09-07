@@ -7,17 +7,19 @@
 
 import SwiftUI
 import MusicCodebase
+import NavigationStack
 
 struct PlayerFullScreen: View {
-    @Binding public var isPlayerFullScreenViewPresented: Bool
+    @Binding public var isViewPresented: Bool
     @State private var appeared: Double = 0
     @ObservedObject private var musicPlayer: MusicPlayer = MusicPlayer.shared
+    @EnvironmentObject private var navigationStack: NavigationStackCompat
     
     var body: some View {
         VStack {
             HStack {
                 Button(action: {
-                    self.isPlayerFullScreenViewPresented.toggle()
+                    self.isViewPresented.toggle()
                 }, label: {
                     Image(systemName: "xmark.circle")
                         .imageScale(.large)
@@ -28,15 +30,30 @@ struct PlayerFullScreen: View {
             VStack {
                 if let currentMusicTrackInQueue = musicPlayer.musicTracksQueue.first {
                     Text(currentMusicTrackInQueue.name)
-                    Text(currentMusicTrackInQueue.performer.name)
                     
-                    if let artworkBinaryImage = musicPlayer.getCurrentMusicTrackArtworkImageFromMetadata() {
-                        Image(uiImage: artworkBinaryImage)
+                    Button(currentMusicTrackInQueue.artist.name) {
+                        self.isViewPresented = false
+                        self.navigationStack.push(MusicTracksList(specifiedAuthor: currentMusicTrackInQueue.artist))
+                    }
+                    
+                    if let artworkUIImage = musicPlayer.musicTracksQueue.first!.getArtworkImageFromMetadata() {
+                        Image(uiImage: artworkUIImage)
                     }
                 }
                 
                 Text(String(format: "%02d:%02d", (Int)(musicPlayer.currentTime) / 60, (Int)(musicPlayer.currentTime) % 60))
-                Slider(value: $musicPlayer.currentTime, in: 0...musicPlayer.duration)
+                Slider(value: $musicPlayer.currentTime, in: 0...musicPlayer.duration) {editing in
+                    if !editing {
+                        print(musicPlayer.currentTime)
+                        musicPlayer.musicTracksPlayer?.currentTime = TimeInterval(musicPlayer.currentTime)
+                        
+                        musicPlayer.repeatedTimer?.resume()
+                    }
+                    else
+                    {
+                        musicPlayer.repeatedTimer?.pause()
+                    }
+                }
                 Text(String(format: "%02d:%02d", (Int)(musicPlayer.duration) / 60, (Int)(musicPlayer.duration) % 60))
                 
                 HStack {
@@ -82,6 +99,5 @@ struct PlayerFullScreen: View {
             Spacer()
         }
         .padding()
-        .navigationBarHidden(true)
     }
 }

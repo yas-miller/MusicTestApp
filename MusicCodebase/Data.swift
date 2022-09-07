@@ -28,6 +28,15 @@ public class Data: ObservableObject, Codable
         self.musicTracks?.append(MusicTrack(name: "Can't feel my face", performer: performerTheWeeknd, filePath: musicCodebaseBundle.path(forResource: "the_weeknd-cant_feel_my_face", ofType: "mp3")!))
         self.musicTracks?.append(MusicTrack(name: "Secrets", performer: performerTheWeeknd, filePath: musicCodebaseBundle.path(forResource: "the_weeknd-secrets", ofType: "mp3")!))
         self.musicTracks?.append(MusicTrack(name: "Ordinary life", performer: performerTheWeeknd, filePath: musicCodebaseBundle.path(forResource: "the_weeknd-ordinary_life", ofType: "mp3")!))
+        self.musicTracks?.append(MusicTrack(name: "Can't feel my face", performer: performerTheWeeknd, filePath: musicCodebaseBundle.path(forResource: "the_weeknd-cant_feel_my_face", ofType: "mp3")!))
+        self.musicTracks?.append(MusicTrack(name: "Secrets", performer: performerTheWeeknd, filePath: musicCodebaseBundle.path(forResource: "the_weeknd-secrets", ofType: "mp3")!))
+        self.musicTracks?.append(MusicTrack(name: "Ordinary life", performer: performerTheWeeknd, filePath: musicCodebaseBundle.path(forResource: "the_weeknd-ordinary_life", ofType: "mp3")!))
+        self.musicTracks?.append(MusicTrack(name: "Can't feel my face", performer: performerTheWeeknd, filePath: musicCodebaseBundle.path(forResource: "the_weeknd-cant_feel_my_face", ofType: "mp3")!))
+        self.musicTracks?.append(MusicTrack(name: "Secrets", performer: performerTheWeeknd, filePath: musicCodebaseBundle.path(forResource: "the_weeknd-secrets", ofType: "mp3")!))
+        self.musicTracks?.append(MusicTrack(name: "Ordinary life", performer: performerTheWeeknd, filePath: musicCodebaseBundle.path(forResource: "the_weeknd-ordinary_life", ofType: "mp3")!))
+        self.musicTracks?.append(MusicTrack(name: "Can't feel my face", performer: performerTheWeeknd, filePath: musicCodebaseBundle.path(forResource: "the_weeknd-cant_feel_my_face", ofType: "mp3")!))
+        self.musicTracks?.append(MusicTrack(name: "Secrets", performer: performerTheWeeknd, filePath: musicCodebaseBundle.path(forResource: "the_weeknd-secrets", ofType: "mp3")!))
+        self.musicTracks?.append(MusicTrack(name: "Ordinary life", performer: performerTheWeeknd, filePath: musicCodebaseBundle.path(forResource: "the_weeknd-ordinary_life", ofType: "mp3")!))
     }
     
     public func loadDataLocally() throws

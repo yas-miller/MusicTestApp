@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC7D69F528C9296F006DEB88 /* ResumableTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7D69F428C9296F006DEB88 /* ResumableTimer.swift */; };
+		AC7D69F828C93C77006DEB88 /* NavigationStack in Frameworks */ = {isa = PBXBuildFile; productRef = AC7D69F728C93C77006DEB88 /* NavigationStack */; };
+		AC7D69FA28C943E7006DEB88 /* CustomBackNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7D69F928C943E7006DEB88 /* CustomBackNavigationButton.swift */; };
+		AC7D69FC28C9542F006DEB88 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7D69FB28C9542F006DEB88 /* VisualEffectView.swift */; };
 		AC80201028C6B2D800B79E9D /* MusicTestAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC80200F28C6B2D800B79E9D /* MusicTestAppApp.swift */; };
 		AC80201228C6B2D800B79E9D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC80201128C6B2D800B79E9D /* ContentView.swift */; };
 		AC80201428C6B2D900B79E9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC80201328C6B2D900B79E9D /* Assets.xcassets */; };
@@ -70,6 +74,9 @@
 
 /* Begin PBXFileReference section */
 		AC7D69F128C8D4C2006DEB88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AC7D69F428C9296F006DEB88 /* ResumableTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumableTimer.swift; sourceTree = "<group>"; };
+		AC7D69F928C943E7006DEB88 /* CustomBackNavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackNavigationButton.swift; sourceTree = "<group>"; };
+		AC7D69FB28C9542F006DEB88 /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		AC80200C28C6B2D800B79E9D /* MusicTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC80200F28C6B2D800B79E9D /* MusicTestAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTestAppApp.swift; sourceTree = "<group>"; };
 		AC80201128C6B2D800B79E9D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +105,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC80203A28C6B48300B79E9D /* MusicCodebase.framework in Frameworks */,
+				AC7D69F828C93C77006DEB88 /* NavigationStack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +160,8 @@
 				ACC7C22428C779A00083C1F8 /* MusicTracksList.swift */,
 				ACC7C22628C77B8D0083C1F8 /* MusicTrackDetails.swift */,
 				ACC7C22828C77BE60083C1F8 /* PlayerSmallFrame.swift */,
+				AC7D69F928C943E7006DEB88 /* CustomBackNavigationButton.swift */,
+				AC7D69FB28C9542F006DEB88 /* VisualEffectView.swift */,
 			);
 			path = MusicTestApp;
 			sourceTree = "<group>";
@@ -183,6 +193,7 @@
 				AC80204528C6B4D000B79E9D /* MusicTrack.swift */,
 				ACC7C21C28C76FBC0083C1F8 /* Performer.swift */,
 				ACC7C22A28C77EE40083C1F8 /* MusicPlayer.swift */,
+				AC7D69F428C9296F006DEB88 /* ResumableTimer.swift */,
 			);
 			path = MusicCodebase;
 			sourceTree = "<group>";
@@ -231,6 +242,9 @@
 				AC80203928C6B48300B79E9D /* PBXTargetDependency */,
 			);
 			name = MusicTestApp;
+			packageProductDependencies = (
+				AC7D69F728C93C77006DEB88 /* NavigationStack */,
+			);
 			productName = MusicTestApp;
 			productReference = AC80200C28C6B2D800B79E9D /* MusicTestApp.app */;
 			productType = "com.apple.product-type.application";
@@ -309,6 +323,7 @@
 			mainGroup = AC80200328C6B2D700B79E9D;
 			packageReferences = (
 				ACC7C21628C766320083C1F8 /* XCRemoteSwiftPackageReference "EasyStash" */,
+				AC7D69F628C93C77006DEB88 /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */,
 			);
 			productRefGroup = AC80200D28C6B2D800B79E9D /* Products */;
 			projectDirPath = "";
@@ -359,6 +374,8 @@
 				ACC7C22528C779A00083C1F8 /* MusicTracksList.swift in Sources */,
 				ACC7C22928C77BE60083C1F8 /* PlayerSmallFrame.swift in Sources */,
 				AC80201228C6B2D800B79E9D /* ContentView.swift in Sources */,
+				AC7D69FA28C943E7006DEB88 /* CustomBackNavigationButton.swift in Sources */,
+				AC7D69FC28C9542F006DEB88 /* VisualEffectView.swift in Sources */,
 				AC80201028C6B2D800B79E9D /* MusicTestAppApp.swift in Sources */,
 				ACC7C22728C77B8D0083C1F8 /* MusicTrackDetails.swift in Sources */,
 			);
@@ -372,6 +389,7 @@
 				AC80204428C6B4A100B79E9D /* Data.swift in Sources */,
 				ACC7C21B28C768440083C1F8 /* Published.swift in Sources */,
 				ACC7C22B28C77EE40083C1F8 /* MusicPlayer.swift in Sources */,
+				AC7D69F528C9296F006DEB88 /* ResumableTimer.swift in Sources */,
 				AC80204628C6B4D000B79E9D /* MusicTrack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -726,6 +744,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		AC7D69F628C93C77006DEB88 /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/matteopuc/swiftui-navigation-stack";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		ACC7C21628C766320083C1F8 /* XCRemoteSwiftPackageReference "EasyStash" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onmyway133/EasyStash";
@@ -737,6 +763,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AC7D69F728C93C77006DEB88 /* NavigationStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC7D69F628C93C77006DEB88 /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */;
+			productName = NavigationStack;
+		};
 		ACC7C21728C766320083C1F8 /* EasyStash */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = ACC7C21628C766320083C1F8 /* XCRemoteSwiftPackageReference "EasyStash" */;

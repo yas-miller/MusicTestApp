@@ -16,25 +16,19 @@ struct ContentView: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             NavigationStackView {
-                MusicTracksList()
-                    .navigationTitle("MusicTestApp")
-                    .fullScreenCover(isPresented: $isPlayerFullScreenViewPresented) {
-                        PlayerFullScreen(isViewPresented: $isPlayerFullScreenViewPresented)
-                    }
+                VStack {
+                    Text("MusicTestApp")
+                        .font(.system(.largeTitle))
+                        .padding(Edge.Set.vertical)
+                    MusicTracksList()
+                        .fullScreenCover(isPresented: $isPlayerFullScreenViewPresented) {
+                            PlayerFullScreen(isViewPresented: $isPlayerFullScreenViewPresented)
+                        }
+                }
             }
 
-            VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterial))
+            PlayerSmall(isPlayerFullScreenViewPresented: $isPlayerFullScreenViewPresented)
                 .frame(minWidth: 100, maxWidth: .infinity, minHeight: 30, maxHeight: 70)
-                .edgesIgnoringSafeArea(.bottom)
-
-            
-            PlayerSmallFrame()
-                .foregroundColor(.black)
-                .frame(minWidth: 100, maxWidth: .infinity, minHeight: 30, maxHeight: 70)
-                .animation(Animation.interactiveSpring())
-                .onTapGesture {
-                    self.isPlayerFullScreenViewPresented.toggle()
-                }
         }
     }
 }

@@ -19,7 +19,15 @@ struct MusicTestAppApp: App {
     
     @StateObject var data: MusicCodebase.Data = {
         let data = MusicCodebase.Data()
-        data.loadGenericData()
+        do
+        {
+            try data.loadDataLocally()
+        }
+        catch
+        {
+            data.loadGenericData()
+            try! data.saveDataLocally()
+        }
         return data
     }()
     

@@ -11,67 +11,58 @@ import NavigationStack
 
 struct MusicTracksList: View {
     @EnvironmentObject var data: MusicCodebase.Data
-    @State public var specifiedAuthor: MusicCodebase.Performer?
+    @ObservedObject private var musicPlayer: MusicCodebase.MusicPlayer = MusicCodebase.MusicPlayer.shared
+    @State public var specifiedAuthor: MusicCodebase.Artist?
     
     var body: some View {
         VStack {
             CustomBackNavigationButton()
             
-            if let musicTracks = data.musicTracks
+            if var musicTracks = data.musicTracks
             {
                 if let specifiedAuthor = self.specifiedAuthor
                 {
-                    List(musicTracks.filter {
-                        $0.artist.id == specifiedAuthor.id
-                    }) { musicTrack in
-                        HStack {
-                            Button(action: {
-                                do
-                                {
-                                    try MusicPlayer.shared.startPlayingNewMusicTrack(musicTrack: musicTrack)
-                                }
-                                catch let error
-                                {
-                                    
-                                }
-                            }, label: {
-                                Image(systemName: "play.circle")
-                                    .imageScale(.large)
-                            })
-                            
-                            PushView(destination: MusicTrackDetails(musicTrack: musicTrack)) {
-                                Text(musicTrack.name)
-                            }
+                    Text("Music tracks by \(specifiedAuthor.name)")
+                        .font(.system(.title))
+                    
+                    let _ = {
+                        musicTracks.filter {
+                            $0.artist?.id == specifiedAuthor.id
                         }
-                    }
-                    .navigationTitle("Music tracks by \(specifiedAuthor.name)")
+                    }()
                 }
-                else
-                {
-                    List(musicTracks) { musicTrack in
-                        HStack {
-                            Button(action: {
-                                do
-                                {
-                                    try MusicPlayer.shared.startPlayingNewMusicTrack(musicTrack: musicTrack)
+
+                List(musicTracks.enumerated().map({$0}), id: \.element.id) { musicTrackIndex, musicTrack in
+                    HStack {
+                        Button(action: {
+                            do
+                            {
+                                var musicTracksToQueue: [MusicTrack] = musicTracks
+                                if musicTrackIndex > 0 {
+                                    musicTracksToQueue.removeSubrange(0...musicTrackIndex - 1)
                                 }
-                                catch let error
-                                {
-                                    
-                                }
-                            }, label: {
-                                Image(systemName: "play.circle")
-                                    .imageScale(.large)
-                            })
-                            
-                            PushView(destination: MusicTrackDetails(musicTrack: musicTrack)) {
-                                Text(musicTrack.name)
+                                
+                                musicPlayer.musicTracksQueue.removeAll()
+                                musicPlayer.musicTracksQueue.append(contentsOf: musicTracksToQueue)
+                                try? musicPlayer.resetAndStartPlaying()
                             }
+                            catch let error
+                            {
+                                
+                            }
+                        }, label: {
+                            Image(systemName: "play.circle")
+                                .imageScale(.large)
+                        })
+                        
+                        if let musicTrackTitle = musicTrack.title {
+                            PushView(destination: MusicTrackDetails(musicTrack: musicTrack)) {
+                                    Text(musicTrackTitle)
+                                }
                         }
                     }
                 }
             }
         }
-        
     }
 }

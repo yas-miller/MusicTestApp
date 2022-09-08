@@ -7,10 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC79A82B28CA41F700C16E1C /* The Weeknd - Take My Breath (Extended Version).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AC79A82828CA41F600C16E1C /* The Weeknd - Take My Breath (Extended Version).mp3 */; };
+		AC79A82C28CA41F700C16E1C /* The Weeknd - How Do I Make You Love Me (Sebastian Ingrosso & Salvatore Gan.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AC79A82928CA41F600C16E1C /* The Weeknd - How Do I Make You Love Me (Sebastian Ingrosso & Salvatore Gan.mp3 */; };
+		AC79A82D28CA41F700C16E1C /* The Weeknd - Out Of Time.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AC79A82A28CA41F700C16E1C /* The Weeknd - Out Of Time.mp3 */; };
+		AC79A82F28CA47CA00C16E1C /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC79A82E28CA47CA00C16E1C /* String.swift */; };
+		AC79A83128CA48A400C16E1C /* MusicTrackArtworkImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC79A83028CA48A400C16E1C /* MusicTrackArtworkImage.swift */; };
 		AC7D69F528C9296F006DEB88 /* ResumableTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7D69F428C9296F006DEB88 /* ResumableTimer.swift */; };
 		AC7D69F828C93C77006DEB88 /* NavigationStack in Frameworks */ = {isa = PBXBuildFile; productRef = AC7D69F728C93C77006DEB88 /* NavigationStack */; };
 		AC7D69FA28C943E7006DEB88 /* CustomBackNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7D69F928C943E7006DEB88 /* CustomBackNavigationButton.swift */; };
 		AC7D69FC28C9542F006DEB88 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7D69FB28C9542F006DEB88 /* VisualEffectView.swift */; };
+		AC7D69FF28C9F544006DEB88 /* PlayerFullScreenCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7D69FE28C9F544006DEB88 /* PlayerFullScreenCarousel.swift */; };
+		AC7D6A0128CA2523006DEB88 /* PlayerForwardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7D6A0028CA2523006DEB88 /* PlayerForwardButton.swift */; };
+		AC7D6A0328CA2543006DEB88 /* PlayerBackwardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7D6A0228CA2543006DEB88 /* PlayerBackwardButton.swift */; };
+		AC7D6A0528CA25F0006DEB88 /* PlayerPlayPauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7D6A0428CA25F0006DEB88 /* PlayerPlayPauseButton.swift */; };
+		AC7D6A0728CA2635006DEB88 /* PlayerControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7D6A0628CA2635006DEB88 /* PlayerControls.swift */; };
 		AC80201028C6B2D800B79E9D /* MusicTestAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC80200F28C6B2D800B79E9D /* MusicTestAppApp.swift */; };
 		AC80201228C6B2D800B79E9D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC80201128C6B2D800B79E9D /* ContentView.swift */; };
 		AC80201428C6B2D900B79E9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC80201328C6B2D900B79E9D /* Assets.xcassets */; };
@@ -24,13 +34,10 @@
 		AC80204628C6B4D000B79E9D /* MusicTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC80204528C6B4D000B79E9D /* MusicTrack.swift */; };
 		ACC7C21828C766320083C1F8 /* EasyStash in Frameworks */ = {isa = PBXBuildFile; productRef = ACC7C21728C766320083C1F8 /* EasyStash */; };
 		ACC7C21B28C768440083C1F8 /* Published.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC7C21A28C768440083C1F8 /* Published.swift */; };
-		ACC7C21D28C76FBC0083C1F8 /* Performer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC7C21C28C76FBC0083C1F8 /* Performer.swift */; };
-		ACC7C21F28C772E40083C1F8 /* the_weeknd-cant_feel_my_face.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ACC7C21E28C772E40083C1F8 /* the_weeknd-cant_feel_my_face.mp3 */; };
-		ACC7C22228C7734F0083C1F8 /* the_weeknd-ordinary_life.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ACC7C22028C7734E0083C1F8 /* the_weeknd-ordinary_life.mp3 */; };
-		ACC7C22328C7734F0083C1F8 /* the_weeknd-secrets.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ACC7C22128C7734F0083C1F8 /* the_weeknd-secrets.mp3 */; };
+		ACC7C21D28C76FBC0083C1F8 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC7C21C28C76FBC0083C1F8 /* Artist.swift */; };
 		ACC7C22528C779A00083C1F8 /* MusicTracksList.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC7C22428C779A00083C1F8 /* MusicTracksList.swift */; };
 		ACC7C22728C77B8D0083C1F8 /* MusicTrackDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC7C22628C77B8D0083C1F8 /* MusicTrackDetails.swift */; };
-		ACC7C22928C77BE60083C1F8 /* PlayerSmallFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC7C22828C77BE60083C1F8 /* PlayerSmallFrame.swift */; };
+		ACC7C22928C77BE60083C1F8 /* PlayerSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC7C22828C77BE60083C1F8 /* PlayerSmall.swift */; };
 		ACC7C22B28C77EE40083C1F8 /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC7C22A28C77EE40083C1F8 /* MusicPlayer.swift */; };
 /* End PBXBuildFile section */
 
@@ -73,10 +80,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AC79A82828CA41F600C16E1C /* The Weeknd - Take My Breath (Extended Version).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "The Weeknd - Take My Breath (Extended Version).mp3"; sourceTree = "<group>"; };
+		AC79A82928CA41F600C16E1C /* The Weeknd - How Do I Make You Love Me (Sebastian Ingrosso & Salvatore Gan.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "The Weeknd - How Do I Make You Love Me (Sebastian Ingrosso & Salvatore Gan.mp3"; sourceTree = "<group>"; };
+		AC79A82A28CA41F700C16E1C /* The Weeknd - Out Of Time.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "The Weeknd - Out Of Time.mp3"; sourceTree = "<group>"; };
+		AC79A82E28CA47CA00C16E1C /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		AC79A83028CA48A400C16E1C /* MusicTrackArtworkImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTrackArtworkImage.swift; sourceTree = "<group>"; };
 		AC7D69F128C8D4C2006DEB88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AC7D69F428C9296F006DEB88 /* ResumableTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumableTimer.swift; sourceTree = "<group>"; };
 		AC7D69F928C943E7006DEB88 /* CustomBackNavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackNavigationButton.swift; sourceTree = "<group>"; };
 		AC7D69FB28C9542F006DEB88 /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
+		AC7D69FE28C9F544006DEB88 /* PlayerFullScreenCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFullScreenCarousel.swift; sourceTree = "<group>"; };
+		AC7D6A0028CA2523006DEB88 /* PlayerForwardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerForwardButton.swift; sourceTree = "<group>"; };
+		AC7D6A0228CA2543006DEB88 /* PlayerBackwardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerBackwardButton.swift; sourceTree = "<group>"; };
+		AC7D6A0428CA25F0006DEB88 /* PlayerPlayPauseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPlayPauseButton.swift; sourceTree = "<group>"; };
+		AC7D6A0628CA2635006DEB88 /* PlayerControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerControls.swift; sourceTree = "<group>"; };
 		AC80200C28C6B2D800B79E9D /* MusicTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC80200F28C6B2D800B79E9D /* MusicTestAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTestAppApp.swift; sourceTree = "<group>"; };
 		AC80201128C6B2D800B79E9D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -89,13 +106,10 @@
 		AC80204328C6B4A100B79E9D /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		AC80204528C6B4D000B79E9D /* MusicTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTrack.swift; sourceTree = "<group>"; };
 		ACC7C21A28C768440083C1F8 /* Published.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Published.swift; sourceTree = "<group>"; };
-		ACC7C21C28C76FBC0083C1F8 /* Performer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Performer.swift; sourceTree = "<group>"; };
-		ACC7C21E28C772E40083C1F8 /* the_weeknd-cant_feel_my_face.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "the_weeknd-cant_feel_my_face.mp3"; sourceTree = "<group>"; };
-		ACC7C22028C7734E0083C1F8 /* the_weeknd-ordinary_life.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "the_weeknd-ordinary_life.mp3"; sourceTree = "<group>"; };
-		ACC7C22128C7734F0083C1F8 /* the_weeknd-secrets.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "the_weeknd-secrets.mp3"; sourceTree = "<group>"; };
+		ACC7C21C28C76FBC0083C1F8 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		ACC7C22428C779A00083C1F8 /* MusicTracksList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTracksList.swift; sourceTree = "<group>"; };
 		ACC7C22628C77B8D0083C1F8 /* MusicTrackDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTrackDetails.swift; sourceTree = "<group>"; };
-		ACC7C22828C77BE60083C1F8 /* PlayerSmallFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSmallFrame.swift; sourceTree = "<group>"; };
+		ACC7C22828C77BE60083C1F8 /* PlayerSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSmall.swift; sourceTree = "<group>"; };
 		ACC7C22A28C77EE40083C1F8 /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,6 +142,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC7D69FD28C9F507006DEB88 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				AC80202028C6B3FE00B79E9D /* PlayerFullScreen.swift */,
+				ACC7C22828C77BE60083C1F8 /* PlayerSmall.swift */,
+				AC7D69FE28C9F544006DEB88 /* PlayerFullScreenCarousel.swift */,
+				AC7D6A0028CA2523006DEB88 /* PlayerForwardButton.swift */,
+				AC7D6A0228CA2543006DEB88 /* PlayerBackwardButton.swift */,
+				AC7D6A0428CA25F0006DEB88 /* PlayerPlayPauseButton.swift */,
+				AC7D6A0628CA2635006DEB88 /* PlayerControls.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
 		AC80200328C6B2D700B79E9D = {
 			isa = PBXGroup;
 			children = (
@@ -151,17 +179,17 @@
 		AC80200E28C6B2D800B79E9D /* MusicTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				AC7D69FD28C9F507006DEB88 /* Player */,
 				AC7D69F128C8D4C2006DEB88 /* Info.plist */,
-				AC80202028C6B3FE00B79E9D /* PlayerFullScreen.swift */,
 				AC80200F28C6B2D800B79E9D /* MusicTestAppApp.swift */,
 				AC80201128C6B2D800B79E9D /* ContentView.swift */,
 				AC80201328C6B2D900B79E9D /* Assets.xcassets */,
 				AC80201528C6B2D900B79E9D /* Preview Content */,
 				ACC7C22428C779A00083C1F8 /* MusicTracksList.swift */,
 				ACC7C22628C77B8D0083C1F8 /* MusicTrackDetails.swift */,
-				ACC7C22828C77BE60083C1F8 /* PlayerSmallFrame.swift */,
 				AC7D69F928C943E7006DEB88 /* CustomBackNavigationButton.swift */,
 				AC7D69FB28C9542F006DEB88 /* VisualEffectView.swift */,
+				AC79A83028CA48A400C16E1C /* MusicTrackArtworkImage.swift */,
 			);
 			path = MusicTestApp;
 			sourceTree = "<group>";
@@ -177,9 +205,9 @@
 		AC80201D28C6B3C700B79E9D /* Music */ = {
 			isa = PBXGroup;
 			children = (
-				ACC7C22028C7734E0083C1F8 /* the_weeknd-ordinary_life.mp3 */,
-				ACC7C22128C7734F0083C1F8 /* the_weeknd-secrets.mp3 */,
-				ACC7C21E28C772E40083C1F8 /* the_weeknd-cant_feel_my_face.mp3 */,
+				AC79A82928CA41F600C16E1C /* The Weeknd - How Do I Make You Love Me (Sebastian Ingrosso & Salvatore Gan.mp3 */,
+				AC79A82A28CA41F700C16E1C /* The Weeknd - Out Of Time.mp3 */,
+				AC79A82828CA41F600C16E1C /* The Weeknd - Take My Breath (Extended Version).mp3 */,
 			);
 			path = Music;
 			sourceTree = "<group>";
@@ -191,7 +219,7 @@
 				ACC7C21928C768120083C1F8 /* Extensions */,
 				AC80204328C6B4A100B79E9D /* Data.swift */,
 				AC80204528C6B4D000B79E9D /* MusicTrack.swift */,
-				ACC7C21C28C76FBC0083C1F8 /* Performer.swift */,
+				ACC7C21C28C76FBC0083C1F8 /* Artist.swift */,
 				ACC7C22A28C77EE40083C1F8 /* MusicPlayer.swift */,
 				AC7D69F428C9296F006DEB88 /* ResumableTimer.swift */,
 			);
@@ -210,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				ACC7C21A28C768440083C1F8 /* Published.swift */,
+				AC79A82E28CA47CA00C16E1C /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -350,9 +379,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACC7C22228C7734F0083C1F8 /* the_weeknd-ordinary_life.mp3 in Resources */,
-				ACC7C22328C7734F0083C1F8 /* the_weeknd-secrets.mp3 in Resources */,
-				ACC7C21F28C772E40083C1F8 /* the_weeknd-cant_feel_my_face.mp3 in Resources */,
+				AC79A82C28CA41F700C16E1C /* The Weeknd - How Do I Make You Love Me (Sebastian Ingrosso & Salvatore Gan.mp3 in Resources */,
+				AC79A82B28CA41F700C16E1C /* The Weeknd - Take My Breath (Extended Version).mp3 in Resources */,
+				AC79A82D28CA41F700C16E1C /* The Weeknd - Out Of Time.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,10 +401,16 @@
 			files = (
 				AC80202128C6B3FE00B79E9D /* PlayerFullScreen.swift in Sources */,
 				ACC7C22528C779A00083C1F8 /* MusicTracksList.swift in Sources */,
-				ACC7C22928C77BE60083C1F8 /* PlayerSmallFrame.swift in Sources */,
+				AC7D6A0728CA2635006DEB88 /* PlayerControls.swift in Sources */,
+				ACC7C22928C77BE60083C1F8 /* PlayerSmall.swift in Sources */,
+				AC79A83128CA48A400C16E1C /* MusicTrackArtworkImage.swift in Sources */,
+				AC7D69FF28C9F544006DEB88 /* PlayerFullScreenCarousel.swift in Sources */,
+				AC7D6A0128CA2523006DEB88 /* PlayerForwardButton.swift in Sources */,
 				AC80201228C6B2D800B79E9D /* ContentView.swift in Sources */,
 				AC7D69FA28C943E7006DEB88 /* CustomBackNavigationButton.swift in Sources */,
+				AC7D6A0528CA25F0006DEB88 /* PlayerPlayPauseButton.swift in Sources */,
 				AC7D69FC28C9542F006DEB88 /* VisualEffectView.swift in Sources */,
+				AC7D6A0328CA2543006DEB88 /* PlayerBackwardButton.swift in Sources */,
 				AC80201028C6B2D800B79E9D /* MusicTestAppApp.swift in Sources */,
 				ACC7C22728C77B8D0083C1F8 /* MusicTrackDetails.swift in Sources */,
 			);
@@ -385,10 +420,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACC7C21D28C76FBC0083C1F8 /* Performer.swift in Sources */,
+				ACC7C21D28C76FBC0083C1F8 /* Artist.swift in Sources */,
 				AC80204428C6B4A100B79E9D /* Data.swift in Sources */,
 				ACC7C21B28C768440083C1F8 /* Published.swift in Sources */,
 				ACC7C22B28C77EE40083C1F8 /* MusicPlayer.swift in Sources */,
+				AC79A82F28CA47CA00C16E1C /* String.swift in Sources */,
 				AC7D69F528C9296F006DEB88 /* ResumableTimer.swift in Sources */,
 				AC80204628C6B4D000B79E9D /* MusicTrack.swift in Sources */,
 			);

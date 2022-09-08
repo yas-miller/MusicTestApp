@@ -36,5 +36,6 @@ struct MusicTrackDetails: View {
             }
             Spacer()
         }
+        .padding()
     }
 }

@@ -8,6 +8,15 @@
         "revision" : "c7230d65d4c2c143ac395e870a7b2bd8cf0c139e",
         "version" : "1.1.8"
       }
+    },
+    {
+      "identity" : "swiftui-navigation-stack",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/matteopuc/swiftui-navigation-stack",
+      "state" : {
+        "revision" : "bc6a8188a937e5da34d07117092131292f9ad9e8",
+        "version" : "1.0.5"
+      }
     }
   ],
   "version" : 2
